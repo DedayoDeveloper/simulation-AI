@@ -5,6 +5,7 @@ class Cube;
 class Camera;
 class Sphere;
 class Cylinder;
+class Tower1;
 
 class IRenderHelpers
 {
@@ -17,4 +18,5 @@ public:
 	virtual void Render(const Sphere*) const = 0;
 	virtual void Render(const Cylinder*) const = 0;
 	virtual void Render(const Camera*) const = 0;
+	virtual void Render(const Tower1*) const = 0;
 };

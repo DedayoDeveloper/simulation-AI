@@ -166,6 +166,7 @@
     <ClCompile Include="Source\imgui\imgui_tables.cpp" />
     <ClCompile Include="Source\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Source\Sphere.cpp" />
+    <ClCompile Include="Source\Tower1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Cylinder.h" />
@@ -186,6 +187,7 @@
     <ClInclude Include="Source\imgui\imstb_textedit.h" />
     <ClInclude Include="Source\imgui\imstb_truetype.h" />
     <ClInclude Include="Source\Sphere.h" />
+    <ClInclude Include="Source\Tower1.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\imgui\LICENSE.txt" />

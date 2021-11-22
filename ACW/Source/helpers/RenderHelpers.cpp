@@ -1592,6 +1592,20 @@ void OpenGLRenderHelpers::Render(const Cube* pCube) const
     glEnableVertexAttribArray(1);
     glDrawArrays(GL_TRIANGLES, 0, 36);
 }
+
+void OpenGLRenderHelpers::Render(const Tower1* pTower1) const 
+{
+
+    //SetColour(pTower1->GetColour());
+    //SetModel(pTower1->GetModel());
+
+    glBindBuffer(GL_ARRAY_BUFFER, m_BufferIDs[0]);
+    glVertexAttribPointer(0, 3, GL_FLOAT, false, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, false, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+    glDrawArrays(GL_TRIANGLES, 0, 36);
+}
 void OpenGLRenderHelpers::Render(const Sphere* pSphere) const
 {
     SetColour(pSphere->GetColour());
