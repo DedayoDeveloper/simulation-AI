@@ -40,6 +40,7 @@ https://github.com/g-truc/glm
 #include "Cube.h"
 #include "Sphere.h"
 #include "Cylinder.h"
+#include "Tower1.h"
 
 #pragma endregion includes
 
@@ -60,7 +61,7 @@ IGuiHelpers* guiHelper;
 Cube cube;
 Sphere sphere;
 Cylinder cylinder;
-
+Tower1 tower1;
 Cube cubes[10000];
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
@@ -183,6 +184,7 @@ static void renderOpenGL()
     /* Render here */
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     camera.Render(*renderHelper);
+    tower1.Render(*renderHelper);
     cube.Render(*renderHelper);
     sphere.Render(*renderHelper);
     cylinder.Render(*renderHelper);
@@ -190,6 +192,7 @@ static void renderOpenGL()
     {
         cubes[i].Render(*renderHelper);
     }
+    tower1.Render(*renderHelper);
 }
 
 int main(void)
@@ -246,7 +249,6 @@ int main(void)
         if (updateTime < 0)
         {
             updateTime = 1.0 / 100.0f;
-
             cube.Rotate(rotationSpeed * updateTime, Y);
             cylinder.Rotate(rotationSpeed * updateTime, X);
 

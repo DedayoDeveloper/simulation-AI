@@ -22,6 +22,7 @@ https://github.com/g-truc/glm
 #include "../Cube.h"
 #include "../Sphere.h"
 #include "../Cylinder.h"
+#include "../Tower1.h"
 
 OpenGLRenderHelpers::~OpenGLRenderHelpers()
 {
@@ -1596,8 +1597,8 @@ void OpenGLRenderHelpers::Render(const Cube* pCube) const
 void OpenGLRenderHelpers::Render(const Tower1* pTower1) const 
 {
 
-    //SetColour(pTower1->GetColour());
-    //SetModel(pTower1->GetModel());
+    SetColour(pTower1->GetColour());
+    SetModel(pTower1->GetModel());
 
     glBindBuffer(GL_ARRAY_BUFFER, m_BufferIDs[0]);
     glVertexAttribPointer(0, 3, GL_FLOAT, false, 6 * sizeof(float), (void*)0);
