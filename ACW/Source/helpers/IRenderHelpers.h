@@ -6,6 +6,8 @@ class Camera;
 class Sphere;
 class Cylinder;
 class Tower1;
+class Tower2;
+class AgentBase;
 
 class IRenderHelpers
 {
@@ -19,4 +21,6 @@ public:
 	virtual void Render(const Cylinder*) const = 0;
 	virtual void Render(const Camera*) const = 0;
 	virtual void Render(const Tower1*) const = 0;
+	virtual void Render(const Tower2*) const = 0;
+	virtual void Render(const AgentBase*) const = 0;
 };

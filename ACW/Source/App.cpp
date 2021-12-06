@@ -41,6 +41,7 @@ https://github.com/g-truc/glm
 #include "Sphere.h"
 #include "Cylinder.h"
 #include "Tower1.h"
+#include "Tower2.h"
 
 #pragma endregion includes
 
@@ -62,6 +63,7 @@ Cube cube;
 Sphere sphere;
 Cylinder cylinder;
 Tower1 tower1;
+Tower2 tower2;
 Cube cubes[10000];
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
@@ -185,14 +187,16 @@ static void renderOpenGL()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     camera.Render(*renderHelper);
     tower1.Render(*renderHelper);
+    tower2.Render(*renderHelper);
     cube.Render(*renderHelper);
-    sphere.Render(*renderHelper);
-    cylinder.Render(*renderHelper);
+    //sphere.Render(*renderHelper);
+   // cylinder.Render(*renderHelper);
     for (int i = 0; i < 10000; i++)
     {
         cubes[i].Render(*renderHelper);
     }
     tower1.Render(*renderHelper);
+    tower2.Render(*renderHelper);
 }
 
 int main(void)
@@ -210,9 +214,10 @@ int main(void)
     double renderTime = 1.0 / 60.0;
     double updateTime = 1.0 / 100.0f;
 
-    sphere.Translate(glm::vec3(1.5f, 0.f, 0.f));
-    cylinder.Translate(glm::vec3(-1.5f, 0.f, 0.f));
-
+    //sphere.Translate(glm::vec3(1.5f, 0.f, 0.f));
+    //cylinder.Translate(glm::vec3(-1.5f, 0.f, 0.f));
+    tower1.Translate(glm::vec3(2, 2, 3));
+    tower2.Translate(glm::vec3(2, 2, 9));
     for (int i = 0; i < 100; i++)
     {
         for (int j = 0; j < 100; j++)

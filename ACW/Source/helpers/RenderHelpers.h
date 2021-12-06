@@ -45,5 +45,7 @@ public:
 	void Render(const Sphere*) const;
 	void Render(const Cylinder*) const;
 	void Render(const Camera*) const;
+	void Render(const AgentBase*) const;
 	void Render(const Tower1*) const;
+	void Render(const Tower2*) const;
 };
