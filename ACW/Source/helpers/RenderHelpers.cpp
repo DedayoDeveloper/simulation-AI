@@ -25,6 +25,7 @@ https://github.com/g-truc/glm
 #include "../Tower1.h"
 #include "../Tower2.h"
 #include "../AgentBase.h"
+#include "../Agent.h"
 
 OpenGLRenderHelpers::~OpenGLRenderHelpers()
 {
@@ -1607,6 +1608,20 @@ void OpenGLRenderHelpers::Render(const AgentBase* pAgentBase) const
     glVertexAttribPointer(1, 3, GL_FLOAT, false, 6 * sizeof(float), (void*)(3 * sizeof(float)));
     glEnableVertexAttribArray(1);
     glDrawArrays(GL_TRIANGLES, 0, 36);
+}
+
+
+void OpenGLRenderHelpers::Render(const Agent* pAgent) const
+{
+    SetColour(pAgent->GetColour());
+    SetModel(pAgent->GetModel());
+
+    glBindBuffer(GL_ARRAY_BUFFER, m_BufferIDs[1]);
+    glVertexAttribPointer(0, 3, GL_FLOAT, false, 6 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+    glVertexAttribPointer(1, 3, GL_FLOAT, false, 6 * sizeof(float), (void*)(3 * sizeof(float)));
+    glEnableVertexAttribArray(1);
+    glDrawArrays(GL_TRIANGLES, 0, 960);
 }
 
 void OpenGLRenderHelpers::Render(const Tower1* pTower1) const 

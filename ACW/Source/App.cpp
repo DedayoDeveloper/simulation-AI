@@ -42,6 +42,8 @@ https://github.com/g-truc/glm
 #include "Cylinder.h"
 #include "Tower1.h"
 #include "Tower2.h"
+#include "Agent.h"
+#include "World.h"
 
 #pragma endregion includes
 
@@ -64,7 +66,12 @@ Sphere sphere;
 Cylinder cylinder;
 Tower1 tower1;
 Tower2 tower2;
+
+World world;
+
+Agent agent(world.GetBase());
 Cube cubes[10000];
+
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 // ---------------------------------------------------------------------------------------------------------
@@ -77,6 +84,10 @@ void processInput(GLFWwindow* window, Camera& pCamera, float pDeltaTime)
         pCamera.ProcessKeyboard(FORWARD, pDeltaTime);
     if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
         pCamera.ProcessKeyboard(BACKWARD, pDeltaTime);
+    if (glfwGetKey(window, GLFW_KEY_Q) == GLFW_PRESS)
+        pCamera.ProcessKeyboard(UP, pDeltaTime);
+    if (glfwGetKey(window, GLFW_KEY_Z) == GLFW_PRESS)
+        pCamera.ProcessKeyboard(DOWN, pDeltaTime);
     if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
         if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
             pCamera.ProcessKeyboard(LEFT, pDeltaTime);
@@ -148,7 +159,7 @@ GLFWwindow* setupWindow()
     }
 
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-    glfwSetCursorPosCallback(window, mouse_callback);
+ //   glfwSetCursorPosCallback(window, mouse_callback);
     glfwSetScrollCallback(window, scroll_callback);
 
     /* Make the window's context current */
@@ -175,6 +186,7 @@ void renderImGui()
     cube.RenderGui(*guiHelper);
     sphere.RenderGui(*guiHelper);
     cylinder.RenderGui(*guiHelper);
+    agent.RenderGui(*guiHelper);
 
     ImGui::End();
     ImGui::Render();
@@ -188,6 +200,7 @@ static void renderOpenGL()
     camera.Render(*renderHelper);
     tower1.Render(*renderHelper);
     tower2.Render(*renderHelper);
+    agent.Render(*renderHelper);
     cube.Render(*renderHelper);
     //sphere.Render(*renderHelper);
    // cylinder.Render(*renderHelper);
@@ -197,6 +210,7 @@ static void renderOpenGL()
     }
     tower1.Render(*renderHelper);
     tower2.Render(*renderHelper);
+    
 }
 
 int main(void)
@@ -218,6 +232,7 @@ int main(void)
     //cylinder.Translate(glm::vec3(-1.5f, 0.f, 0.f));
     tower1.Translate(glm::vec3(2, 2, 3));
     tower2.Translate(glm::vec3(2, 2, 9));
+    agent.Translate(glm::vec3(4, 2, 5));
     for (int i = 0; i < 100; i++)
     {
         for (int j = 0; j < 100; j++)
@@ -256,6 +271,8 @@ int main(void)
             updateTime = 1.0 / 100.0f;
             cube.Rotate(rotationSpeed * updateTime, Y);
             cylinder.Rotate(rotationSpeed * updateTime, X);
+            
+            world.Update(updateTime);
 
             processInput(window, camera, updateTime);
         }

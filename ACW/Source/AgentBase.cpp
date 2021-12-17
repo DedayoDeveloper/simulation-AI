@@ -3,6 +3,7 @@
 #include "helpers/IRenderHelpers.h"
 #include "helpers/IGuiHelpers.h"
 #include "AgentBase.h"
+#include "Agent.h"
 
 void AgentBase::Update(float pDeltaTime)
 {
@@ -10,12 +11,10 @@ void AgentBase::Update(float pDeltaTime)
 
 	if (m_TimeTillNextAgent <= 0.f)
 	{
-		Agent agent();
-		m_World->AddAgent(&agent);
+		/*Agent * agent = new Agent();*/
+		m_World->AddAgent(this);
 		m_TimeTillNextAgent = m_TimeBetweenAgents;
 	}
-
-
 }
 
 void AgentBase::Render(const IRenderHelpers& pHelper) const

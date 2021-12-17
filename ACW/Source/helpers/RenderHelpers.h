@@ -39,7 +39,7 @@ private:
 public:
 
 	~OpenGLRenderHelpers();
-
+	
 	void Render(const GameEntity*) const;
 	void Render(const Cube*) const;
 	void Render(const Sphere*) const;
@@ -48,4 +48,6 @@ public:
 	void Render(const AgentBase*) const;
 	void Render(const Tower1*) const;
 	void Render(const Tower2*) const;
+	void Render(const Agent*) const;
+	
 };

@@ -1,0 +1,24 @@
+﻿  AgentBase.cpp
+  App.cpp
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(119,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(120,17): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(124,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(125,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(127,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(128,13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(137,31): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(272,39): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(273,43): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(275,26): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\App.cpp(277,42): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  World.cpp
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\World.cpp(9,44): warning C4316: 'AgentBase': object allocated on the heap may not be aligned 16
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\World.cpp(14,33): warning C4316: 'Agent': object allocated on the heap may not be aligned 16
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\World.cpp(30,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\World.cpp(35,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\ACW\Source\World.cpp(44,20): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\Debug\vc120.pdb'; linking object as if no debug info
+  ACW.vcxproj -> C:\Users\673950\Desktop\acw-DedayoDeveloper-20211217T105248Z-001\acw-DedayoDeveloper\Debug\ACW.exe

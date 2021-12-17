@@ -1,5 +1,6 @@
 #pragma once
 
+
 class GameEntity;
 class Cube;
 class Camera;
@@ -8,6 +9,7 @@ class Cylinder;
 class Tower1;
 class Tower2;
 class AgentBase;
+class Agent;
 
 class IRenderHelpers
 {
@@ -23,4 +25,5 @@ public:
 	virtual void Render(const Tower1*) const = 0;
 	virtual void Render(const Tower2*) const = 0;
 	virtual void Render(const AgentBase*) const = 0;
+	virtual void Render(const Agent*) const = 0;
 };

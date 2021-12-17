@@ -10,7 +10,9 @@ enum Camera_Movement {
     LEFT,
     RIGHT,
     ROTATE_RIGHT,
-    ROTATE_LEFT
+    ROTATE_LEFT,
+    UP,
+    DOWN
 };
 
 // Default camera values
@@ -78,6 +80,10 @@ public:
             Position -= Right * velocity;
         if (direction == RIGHT)
             Position += Right * velocity;
+        if (direction == UP)
+            Position += Up * velocity;
+        if (direction == DOWN)
+            Position -= Up * velocity;
         if (direction == ROTATE_RIGHT)
         {
             Yaw += RotateSpeed * deltaTime;

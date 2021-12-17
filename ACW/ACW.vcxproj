@@ -151,6 +151,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Agent.cpp" />
+    <ClCompile Include="Source\AgentBase.cpp" />
     <ClCompile Include="Source\Cylinder.cpp" />
     <ClCompile Include="Source\Camera.cpp" />
     <ClCompile Include="Source\Cube.cpp" />
@@ -167,8 +169,12 @@
     <ClCompile Include="Source\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Source\Sphere.cpp" />
     <ClCompile Include="Source\Tower1.cpp" />
+    <ClCompile Include="Source\Tower2.cpp" />
+    <ClCompile Include="Source\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Agent.h" />
+    <ClInclude Include="Source\AgentBase.h" />
     <ClInclude Include="Source\Cylinder.h" />
     <ClInclude Include="Source\Camera.h" />
     <ClInclude Include="Source\Cube.h" />
@@ -188,6 +194,8 @@
     <ClInclude Include="Source\imgui\imstb_truetype.h" />
     <ClInclude Include="Source\Sphere.h" />
     <ClInclude Include="Source\Tower1.h" />
+    <ClInclude Include="Source\Tower2.h" />
+    <ClInclude Include="Source\World.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Source\imgui\LICENSE.txt" />
